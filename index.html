@@ -3,10 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Boat Advetures</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <title>Memory Card</title>
   </head>
-  <body></body>
-  <main></main>
+  <body>
+    <main>
+      <!--First Game Screen-->
+      <div id="start-screen">
+        <h1>Sailor's Drift</h1>
+        <img src="../images/Logo.png" alt="" class="logo-img" />
+        <button id="start-button">Click to Start</button>
+      </div>
+      <!--Second Game Screen Area-->
+      <div id="game-container">
+        <section>
+          <h3>Lives: <span id="lives">3</span></h3>
+        </br>
+          <h3>Score: <span id="scores">0</span></h3>
+        </section>
+        <div id="game-area"></div>
+      </div>
+
+      <!--Thrid Game Screen End-->
+      <div id="gameover-screen">
+        <img src=/>
+        <h1>Game Over</h1>
+        <br />
+        <button id="restart-button">Restart</button>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="js/boatControl.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/obstacles.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
 </html>

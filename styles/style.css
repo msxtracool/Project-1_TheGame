@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: azure;
+  font-family: "Doto", sans-serif;
+}
+h1 {
+  font-family: "Doto", sans-serif;
+  color: rgb(27, 27, 27);
+  text-align: center;
+  padding: 2.5rem;
+}
+
+#start-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-img {
+  width: 350px;
+}
+
+/*hidde screen*/
+#game-container {
+  display: none;
+}
+#game-area {
+  display: none;
+  background-image: url(../images/oceanBg2.png);
+}
+
+#gameover-screen {
+  display: none;
+}
