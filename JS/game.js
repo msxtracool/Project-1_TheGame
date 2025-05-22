@@ -7,7 +7,7 @@ class Game {
     this.scorePanel = document.querySelector("#panel");
     this.scoreBoard = document.querySelector("#scores");
     this.livesContainers = document.querySelector("#lives");
-    this.player = new BoatPlayer(this.gameArea, 9, 350);
+    this.player = new BoatPlayer(this.gameArea, 0, 350);
     //this.height = 600;
     //this.width = 500;
     this.obstacles = [];
@@ -27,6 +27,14 @@ class Game {
     }, Math.round(1000 / 60));
   }
   gameLoop() {
-    console.log("game loop");
+    this.update();
+
+    if (this.gameIsOver) {
+      clearInterval(this.gameIntervalId);
+    }
   }
+  update() {
+    console.log("Im in the update");
+    this.player.move();
+  } //It will control my player
 }

@@ -12,11 +12,31 @@ playGameButton.addEventListener("click", () => {
   startGame();
 });
 
+//add the arrow buttons
+window.addEventListener("keydown", (event) => {
+  if (event.code === "ArrowRight") {
+    console.log("right pressed");
+    ourGame.player.directionX = 2;
+  }
+  if (event.code === "ArrowLeft") {
+    console.log("left pressed");
+    ourGame.player.directionX = -2;
+  }
+  if (event.code === "ArrowUp") {
+    console.log("Up pressed");
+    ourGame.player.directionY = -2;
+  }
+  if (event.code === "ArrowDown") {
+    console.log("Down pressed");
+    ourGame.player.directionY = 2;
+  }
+});
+
 //functions
 
 function startGame() {
   console.log("starting the game");
   //hide the start screen
-  const ourGame = new Game();
+  ourGame = new Game();
   ourGame.start();
 }

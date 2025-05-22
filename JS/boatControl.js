@@ -1,13 +1,16 @@
 //adicionar a imagem no html e criar os controles
 class BoatPlayer {
-  constructor(gameScreen, left, top, height, width) {
-    this.gameScreen = gameScreen;
-    this.left = left;
-    this.top = top;
+  constructor(gameArea, left, top, height, width) {
+    this.gameScreen = gameArea;
+    this.left = 0;
+    this.top = 350; //??
     this.width = 110;
     this.height = 110;
-    this.element = document.createElement("img");
+    this.directionX = 0; //speedy indicator
+    this.directionY = 0;
 
+    //create an img for the player
+    this.element = document.createElement("img");
     this.element.src = "../images/boatpaper.PNG";
     this.element.style.width = this.width + "px";
     this.element.style.height = this.height + "px";
@@ -16,5 +19,32 @@ class BoatPlayer {
     this.element.style.top = this.top + "px";
 
     this.gameScreen.appendChild(this.element);
+  }
+  move() {
+    if (this.top <= 145 && this.directionY < 0) {
+      this.directionY = 0; 
+    }
+    this.left = this.left + this.directionX;
+    this.top = this.top + this.directionY;
+
+    if (this.left < 0) {
+      this.left = 0;
+    }
+    if (this.left > 800) {
+      this.left = 800;
+    }
+    if (this.top < 0) {
+      this.top = 0;
+    }
+    if (this.top > 350) {
+      this.top = 350;
+    }
+    //I need to add more conditional for up and down.
+
+    this.updatePosition();
+  }
+  updatePosition() {
+    this.element.style.left = this.left + "px";
+    this.element.style.top = this.top + "px";
   }
 }
