@@ -4,11 +4,12 @@ class Game {
     this.gameArea = document.querySelector("#game-area");
     this.endScreen = document.querySelector("#gameover-screen");
     this.gameContainer = document.querySelector("#game-container");
+    this.scorePanel = document.querySelector("#panel");
     this.scoreBoard = document.querySelector("#scores");
     this.livesContainers = document.querySelector("#lives");
-    this.player = new BoatPlayer(this.gameArea, 50, 50, 100, 100);
-    this.height = 600;
-    this.width = 500;
+    this.player = new BoatPlayer(this.gameArea, 9, 350);
+    //this.height = 600;
+    //this.width = 500;
     this.obstacles = [];
     this.score = 0;
     this.lives = 3;
@@ -16,10 +17,10 @@ class Game {
     this.gameIntervalId = null; //store game's timer;
   }
   start() {
-    this.gameArea.style.height = this.height + "px";
-    this.gameArea.style.width = this.width + "px";
+    //this.gameArea.style.height = this.height + "px";
+    // this.gameArea.style.width = this.width + "px";
     this.startScreen.style.display = "none";
-    this.gameContainer.style.display = "block";
+    this.gameContainer.style.display = "flex";
     this.gameArea.style.display = "block";
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();

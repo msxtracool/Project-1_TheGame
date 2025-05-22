@@ -4,8 +4,8 @@ class BoatPlayer {
     this.gameScreen = gameScreen;
     this.left = left;
     this.top = top;
-    this.width = width;
-    this.height = height;
+    this.width = 110;
+    this.height = 110;
     this.element = document.createElement("img");
 
     this.element.src = "../images/boatpaper.PNG";

@@ -31,10 +31,49 @@ h1 {
 /*hidde screen*/
 #game-container {
   display: none;
+  justify-content: center; /* centraliza na horizontal */
+  align-items: center; /* centraliza na vertical */
+  height: 100vh; /* altura da tela toda */
 }
+
 #game-area {
   display: none;
+  position: relative; /* necessário para posicionar filhos com position absolute */
   background-image: url(../images/oceanBg2.png);
+  width: 900px;
+  height: 450px;
+  padding: 1rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: black; /* ou outra cor que contraste com o fundo */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* leve transparência para visibilidade */
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.5rem;
+}
+
+#game-area {
+  display: none;
+  position: relative;
+  background-image: url(../images/oceanBg2.png);
+  width: 900px;
+  height: 450px;
+  padding: 1rem;
+  background-size: cover; /* Preenche todo o espaço */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #gameover-screen {
