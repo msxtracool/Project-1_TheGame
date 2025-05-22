@@ -10,7 +10,7 @@ class Game {
     this.player = new BoatPlayer(this.gameArea, 0, 350);
     //this.height = 600;
     //this.width = 500;
-    this.obstacles = [];
+    this.obstacles = [new Obstacles(this.gameArea)];
     this.score = 0;
     this.lives = 3;
     this.gameIsOver = false;

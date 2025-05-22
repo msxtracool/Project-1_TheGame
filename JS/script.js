@@ -32,6 +32,24 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
+window.addEventListener("keyup", (event) => {
+  if (event.code === "ArrowRight") {
+    console.log("right pressed");
+    ourGame.player.directionX = 0;
+  }
+  if (event.code === "ArrowLeft") {
+    console.log("left pressed");
+    ourGame.player.directionX = 0;
+  }
+  if (event.code === "ArrowUp") {
+    console.log("Up pressed");
+    ourGame.player.directionY = 0;
+  }
+  if (event.code === "ArrowDown") {
+    console.log("Down pressed");
+    ourGame.player.directionY = 0;
+  }
+});
 //functions
 
 function startGame() {
