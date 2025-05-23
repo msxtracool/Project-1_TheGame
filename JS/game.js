@@ -33,8 +33,27 @@ class Game {
       clearInterval(this.gameIntervalId);
     }
   }
+
+  //updates the boat and the obstacle when moving and exceeding screen
   update() {
     console.log("Im in the update");
+    //move the player
     this.player.move();
-  } //It will control my player
+
+    //transverse the Array of obstacles
+    for (let i = 0; i < this.obstacles.length; i++) {
+      const currentObstacle = this.obstacles[i];
+      currentObstacle.move();
+
+      //Exceed the screen width, remove from the array and DOM
+      if (currentObstacle.left < -5) {
+        //remove from array
+        this.obstacles.splice(i, 1);
+
+        //remove from the DOM
+        currentObstacle.element.remove();
+        i--;
+      }
+    }
+  }
 }

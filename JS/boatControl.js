@@ -3,7 +3,7 @@ class BoatPlayer {
   constructor(gameArea, left, top, height, width) {
     this.gameScreen = gameArea;
     this.left = 0;
-    this.top = 350; //??
+    this.top = 350;
     this.width = 110;
     this.height = 110;
     this.directionX = 0; //speedy indicator
@@ -20,9 +20,11 @@ class BoatPlayer {
 
     this.gameScreen.appendChild(this.element);
   }
+
+  //makes the boat move in the gameArea
   move() {
     if (this.top <= 145 && this.directionY < 0) {
-      this.directionY = 0; 
+      this.directionY = 0;
     }
     this.left = this.left + this.directionX;
     this.top = this.top + this.directionY;
@@ -39,7 +41,6 @@ class BoatPlayer {
     if (this.top > 350) {
       this.top = 350;
     }
-    //I need to add more conditional for up and down.
 
     this.updatePosition();
   }

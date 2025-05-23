@@ -1,10 +1,10 @@
 class Obstacles {
   constructor(gameArea) {
     this.gameScreen = gameArea;
-    this.left = 800;
-    this.top = 300; //??
-    this.width = 100;
-    this.height = 100;
+    this.left = 775;
+    this.top = 300;
+    this.width = 150;
+    this.height = 150;
 
     //create an img for the obstacles
     this.element = document.createElement("img");
@@ -19,8 +19,6 @@ class Obstacles {
   }
   move() {
     this.left -= 3;
-
-    //I need to add more conditional for up and down.
 
     this.updatePosition();
   }
