@@ -15,6 +15,7 @@ class Game {
     this.lives = 3;
     this.gameIsOver = false;
     this.gameIntervalId = null; //store game's timer;
+    this.frames = 0; //repeat obstacles movement
   }
   start() {
     //this.gameArea.style.height = this.height + "px";
@@ -27,6 +28,7 @@ class Game {
     }, Math.round(1000 / 60));
   }
   gameLoop() {
+    this.frames++;
     this.update();
 
     if (this.gameIsOver) {
@@ -37,8 +39,14 @@ class Game {
   //updates the boat and the obstacle when moving and exceeding screen
   update() {
     console.log("Im in the update");
+
     //move the player
     this.player.move();
+
+    //every 30 frames add new obstacle
+    if (this.frames % 100 === 0) {
+      this.obstacles.push(new Obstacles(this.gameArea));
+    }
 
     //transverse the Array of obstacles
     for (let i = 0; i < this.obstacles.length; i++) {

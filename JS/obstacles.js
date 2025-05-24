@@ -1,8 +1,10 @@
 class Obstacles {
   constructor(gameArea) {
     this.gameScreen = gameArea;
-    this.left = 775;
-    this.top = 300;
+
+    //obstacles position
+    this.left = Math.floor(Math.random() * (800 - 0 + 1) + 0);
+    this.top = Math.floor(Math.random() * (400 - 300 + 1) + 140);
     this.width = 150;
     this.height = 150;
 
@@ -27,3 +29,5 @@ class Obstacles {
     this.element.style.left = this.left + "px";
   }
 }
+
+//Add new obstacles
