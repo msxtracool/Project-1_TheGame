@@ -7,10 +7,12 @@ class Obstacles {
     this.top = Math.floor(Math.random() * (400 - 300 + 1) + 140);
     this.width = 150;
     this.height = 150;
+    this.imagesArray = [];
 
     //create an img for the obstacles
     this.element = document.createElement("img");
     this.element.src = "../images/obstacle01.PNG";
+
     this.element.style.position = "absolute";
     this.element.style.width = this.width + "px";
     this.element.style.height = this.height + "px";
