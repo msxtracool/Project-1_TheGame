@@ -44,7 +44,7 @@ class Game {
     this.player.move();
 
     //every 30 frames add new obstacle
-    if (this.frames % 100 === 0) {
+    if (this.frames % 40 === 0) {
       this.obstacles.push(new Obstacles(this.gameArea));
     }
 
@@ -52,6 +52,20 @@ class Game {
     for (let i = 0; i < this.obstacles.length; i++) {
       const currentObstacle = this.obstacles[i];
       currentObstacle.move();
+
+      //Check if the boat hits the obstacles.
+      if (this.player.didCollide(currentObstacle)) {
+        this.score++;
+        this.scoreBoard.innerText = this.score; //updated the score panel
+
+        console.log("bum bum bum");
+
+        //remove from array
+        this.obstacles.splice(i, 1);
+
+        //remove from the DOM
+        currentObstacle.element.remove();
+      }
 
       //Exceed the screen width, remove from the array and DOM
       if (currentObstacle.left < -5) {

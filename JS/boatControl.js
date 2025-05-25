@@ -4,8 +4,8 @@ class BoatPlayer {
     this.gameScreen = gameArea;
     this.left = 0;
     this.top = 350;
-    this.width = 110;
-    this.height = 110;
+    this.width = 125;
+    this.height = 125;
     this.directionX = 0; //speedy indicator
     this.directionY = 0;
 
@@ -52,7 +52,7 @@ class BoatPlayer {
   //collision
   didCollide(obstacle) {
     const playerRect = this.element.getBoundingClientRect(); //calculate boat's rectangle.
-    const obstacleRect = obstacle.element.getBoundingClientRect();//calculate obstacle's rectangle.
+    const obstacleRect = obstacle.element.getBoundingClientRect(); //calculate obstacle's rectangle.
 
     if (
       playerRect.left < obstacleRect.right &&
