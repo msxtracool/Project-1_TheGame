@@ -5,6 +5,8 @@ const playGameButton = document.querySelector("#start-button");
 const startScreen = document.querySelector("#start-screen");
 const gameContainer = document.querySelector("#game-container");
 const gameArea = document.querySelector("#game-area");
+const timerSpan = document.querySelector("#timer span");
+const progressBar = document.querySelector(".bar");
 let ourGame;
 
 //event listeners

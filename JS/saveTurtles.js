@@ -1,4 +1,4 @@
-class Obstacles {
+class Turtles {
   constructor(gameArea) {
     this.gameScreen = gameArea;
 

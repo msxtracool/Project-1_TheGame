@@ -6,16 +6,20 @@ class Game {
     this.gameContainer = document.querySelector("#game-container");
     this.scorePanel = document.querySelector("#panel");
     this.scoreBoard = document.querySelector("#scores");
-    this.livesContainers = document.querySelector("#lives");
+    this.gameTimer = document.querySelector("#timer");
     this.player = new BoatPlayer(this.gameArea, 0, 350);
     //this.height = 600;
     //this.width = 500;
-    this.obstacles = [new Obstacles(this.gameArea)];
+    this.saveTurtles = [new Turtles(this.gameArea)];
     this.score = 0;
     this.lives = 3;
     this.gameIsOver = false;
     this.gameIntervalId = null; //store game's timer;
     this.frames = 0; //repeat obstacles movement
+
+    this.totalTime = 30; // total timer
+    this.currentTime = this.totalTime;
+    this.timerIntervalId = null;
   }
   start() {
     //this.gameArea.style.height = this.height + "px";
@@ -23,6 +27,9 @@ class Game {
     this.startScreen.style.display = "none";
     this.gameContainer.style.display = "flex";
     this.gameArea.style.display = "block";
+
+    this.startTimer(); // start the time
+
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, Math.round(1000 / 60));
@@ -36,46 +43,67 @@ class Game {
     }
   }
 
-  //updates the boat and the obstacle when moving and exceeding screen
+  //updates the boat and the turtle when moving and exceeding screen
   update() {
     console.log("Im in the update");
 
     //move the player
     this.player.move();
 
-    //every 30 frames add new obstacle
+    //every 30 frames add new turtle
     if (this.frames % 40 === 0) {
-      this.obstacles.push(new Obstacles(this.gameArea));
+      this.saveTurtles.push(new Turtles(this.gameArea));
     }
 
-    //transverse the Array of obstacles
-    for (let i = 0; i < this.obstacles.length; i++) {
-      const currentObstacle = this.obstacles[i];
-      currentObstacle.move();
+    //transverse the Array of turtles
+    for (let i = 0; i < this.saveTurtles.length; i++) {
+      const currentTurtles = this.saveTurtles[i];
+      currentTurtles.move();
 
-      //Check if the boat hits the obstacles.
-      if (this.player.didCollide(currentObstacle)) {
+      //Check if the boat catches turtles.
+      if (this.player.didCollide(currentTurtles)) {
         this.score++;
         this.scoreBoard.innerText = this.score; //updated the score panel
 
         console.log("bum bum bum");
 
         //remove from array
-        this.obstacles.splice(i, 1);
+        this.saveTurtles.splice(i, 1);
 
         //remove from the DOM
-        currentObstacle.element.remove();
+        currentTurtles.element.remove();
       }
 
       //Exceed the screen width, remove from the array and DOM
-      if (currentObstacle.left < -5) {
+      if (currentTurtles.left < -5) {
         //remove from array
-        this.obstacles.splice(i, 1);
+        this.saveTurtles.splice(i, 1);
 
         //remove from the DOM
-        currentObstacle.element.remove();
+        currentTurtles.element.remove();
         i--;
       }
     }
+  }
+
+  startTimer() {
+    this.timerIntervalId = setInterval(() => {
+      this.currentTime--;
+
+      // update the time
+      timerSpan.textContent =
+        this.currentTime < 10 ? "0" + this.currentTime : this.currentTime;
+
+      // update the progress bar
+      const percent = (this.currentTime / this.totalTime) * 100;
+      progressBar.style.width = percent + "%";
+
+      // finishes game when time is up
+      if (this.currentTime <= 0) {
+        clearInterval(this.timerIntervalId);
+        this.gameIsOver = true;
+        timerSpan.textContent = "00";
+      }
+    }, 1000);
   }
 }
