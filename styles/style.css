@@ -25,6 +25,29 @@ h1 {
   text-align: center;
 }
 
+button {
+  background: #7c7c7c;
+  border-bottom: 6px inset rgba(0, 0, 0, 0.5);
+  border-left: 6px inset rgba(0, 0, 0, 0.5);
+  border-right: 6px inset rgba(255, 255, 255, 0.5);
+  border-top: 6px inset rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 1rem;
+  min-width: 100px;
+  padding: 0.1rem;
+  text-transform: uppercase;
+  width: auto;
+
+  &:focus,
+  &:hover {
+    background: #bcbcbc;
+  }
+}
+
 .logo-img {
   width: 350px;
 }

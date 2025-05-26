@@ -39,6 +39,7 @@ class Game {
 
     if (this.gameIsOver) {
       clearInterval(this.gameIntervalId);
+      this.timeIsUp();
     }
   }
 
