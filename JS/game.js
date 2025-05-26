@@ -12,10 +12,9 @@ class Game {
     //this.width = 500;
     this.saveTurtles = [new Turtles(this.gameArea)];
     this.score = 0;
-    this.lives = 3;
     this.gameIsOver = false;
     this.gameIntervalId = null; //store game's timer;
-    this.frames = 0; //repeat obstacles movement
+    this.frames = 0; //repeats turtles
 
     this.totalTime = 30; // total timer
     this.currentTime = this.totalTime;
@@ -92,17 +91,18 @@ class Game {
 
       // update the time
       timerSpan.textContent =
-        this.currentTime < 10 ? "0" + this.currentTime : this.currentTime;
+        this.currentTime < 10 ? "0" + this.currentTime : this.currentTime; //adds a 0 if the number is less than 10
 
       // update the progress bar
-      const percent = (this.currentTime / this.totalTime) * 100;
-      progressBar.style.width = percent + "%";
+      const percent = (this.currentTime / this.totalTime) * 100; // calculates the percentagem of time passed
+      progressBar.style.width = percent + "%"; // add the passed percentagem to progress bar
 
       // finishes game when time is up
-      if (this.currentTime <= 0) {
+      if (this.currentTime === 0) {
         clearInterval(this.timerIntervalId);
         this.gameIsOver = true;
         timerSpan.textContent = "00";
+        alert("Time is UP!");
       }
     }, 1000);
   }

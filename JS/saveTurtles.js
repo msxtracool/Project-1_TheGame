@@ -7,11 +7,14 @@ class Turtles {
     this.top = Math.floor(Math.random() * (400 - 200 + 1) + 160);
     this.width = 90;
     this.height = 90;
-    this.imagesArray = [];
-
-    //create an img for the obstacles
+    this.imagesArray = [
+      "../images/babyTurtle.PNG",
+      "../images/babyTurtle02.PNG",
+    ];
+    this.randomImageIndex = Math.floor(Math.random() * this.imagesArray.length);
+    //create turtles image
     this.element = document.createElement("img");
-    this.element.src = "../images/babyTurtle.PNG";
+    this.element.src = this.imagesArray[this.randomImageIndex];
 
     this.element.style.position = "absolute";
     this.element.style.width = this.width + "px";
@@ -31,5 +34,3 @@ class Turtles {
     this.element.style.left = this.left + "px";
   }
 }
-
-//Add new obstacles
