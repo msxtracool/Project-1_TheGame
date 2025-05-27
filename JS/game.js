@@ -114,4 +114,5 @@ class Game {
     const finalScoreSpan = document.querySelector("#final-score");
     finalScoreSpan.innerText = this.score; // Insert the final score
   }
+
 }

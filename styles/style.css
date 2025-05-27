@@ -36,7 +36,7 @@ button {
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
-  margin: 1rem;
+  margin: 3rem;
   min-width: 100px;
   padding: 0.1rem;
   text-transform: uppercase;
@@ -119,6 +119,12 @@ button {
 /*END SCREEN AREA*/
 #gameover-screen {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12rem;
+  align-items: center;
+  font-family: "VT323", monospace;
+  text-align: center;
 }
 
 h2 {

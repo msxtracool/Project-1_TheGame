@@ -7,30 +7,36 @@ const gameContainer = document.querySelector("#game-container");
 const gameArea = document.querySelector("#game-area");
 const timerSpan = document.querySelector("#timer span");
 const progressBar = document.querySelector(".bar");
+const restartButton = document.querySelector("#restart-button");
 let ourGame;
-
 //event listeners
+//start button
 playGameButton.addEventListener("click", () => {
   startGame();
+});
+
+//restart buttoon
+restartButton.addEventListener("click", () => {
+  window.location.reload();
 });
 
 //add the arrow buttons
 window.addEventListener("keydown", (event) => {
   if (event.code === "ArrowRight") {
     console.log("right pressed");
-    ourGame.player.directionX = 2;
+    ourGame.player.directionX = 3;
   }
   if (event.code === "ArrowLeft") {
     console.log("left pressed");
-    ourGame.player.directionX = -2;
+    ourGame.player.directionX = -3;
   }
   if (event.code === "ArrowUp") {
     console.log("Up pressed");
-    ourGame.player.directionY = -2;
+    ourGame.player.directionY = -3;
   }
   if (event.code === "ArrowDown") {
     console.log("Down pressed");
-    ourGame.player.directionY = 2;
+    ourGame.player.directionY = 3;
   }
 });
 
@@ -55,7 +61,6 @@ window.addEventListener("keyup", (event) => {
 //functions
 
 function startGame() {
-  console.log("starting the game");
   //hide the start screen
   ourGame = new Game();
   ourGame.start();
