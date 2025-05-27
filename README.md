@@ -2,18 +2,27 @@
 
 - You control a paper boat floating down a river.
 - Your mission: rescue as many baby turtles as possible before the timer hits zero.
-- Each turtle you save adds to your score—so paddle fast and save them all!
+- Each turtle you save adds to your score. Soo move fast and save them all!
 
 # How to Play
-- Use the arrow keys to move the boat.
+
+- Use the arrow keys to move the boat ← → ↑ ↓.
 
 - Touch the turtles to rescue them.
 
-
 # Project Structure
 
-  PROJECT-1_THEGAME/
+PROJECT-1_THEGAME/
+├── images/  
+│
+├── js/  
+│ ├── boatControl.js
+│ ├── saveTurtles.js
+│ ├── game.js
+│ └── script.js
+│
+├── css/  
+│ └── style.css
+│
 ├── index.html
-├── style.css
-├── script.js
 ├── README.md

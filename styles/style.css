@@ -116,6 +116,21 @@ button {
   background-position: center;
 }
 
+/*END SCREEN AREA*/
 #gameover-screen {
   display: none;
+}
+
+h2 {
+  font: "VT323", monospace;
+  color: rgb(27, 27, 27);
+  text-align: center;
+  padding: 1.9rem;
+}
+
+.end-img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: auto;
 }

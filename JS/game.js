@@ -103,8 +103,15 @@ class Game {
         clearInterval(this.timerIntervalId);
         this.gameIsOver = true;
         timerSpan.textContent = "00";
-        alert("Time is UP!");
       }
     }, 1000);
+  }
+
+  //shows end-screen and final score
+  timeIsUp() {
+    this.gameContainer.style.display = "none";
+    this.endScreen.style.display = "block";
+    const finalScoreSpan = document.querySelector("#final-score");
+    finalScoreSpan.innerText = this.score; // Insert the final score
   }
 }
