@@ -56,15 +56,12 @@ button {
 /*hidde screen*/
 #game-container {
   display: none;
-<<<<<<< HEAD
   justify-content: center;
   align-items: center;
   height: 100vh;
-=======
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
->>>>>>> b4c3f1f502f4b882c43d369eb06eb18c0f0a1bd9
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /*starting the game */
@@ -84,18 +81,10 @@ button {
   position: absolute;
   top: 10px;
   left: 10px;
-<<<<<<< HEAD
   color: black;
   background-color: rgba(255, 255, 255, 0.5); /* slight transparent */
-=======
-  color: black; 
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.5
-  ); /* slight transparent */
->>>>>>> b4c3f1f502f4b882c43d369eb06eb18c0f0a1bd9
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5); /* slight transparent */
   padding: 20px;
   border-radius: 10px;
   font-size: 0.7rem;
@@ -117,8 +106,6 @@ button {
   transition: width 1s linear;
 }
 
-<<<<<<< HEAD
-=======
 #game-area {
   display: none;
   position: relative;
@@ -126,12 +113,11 @@ button {
   width: 900px;
   height: 450px;
   padding: 1rem;
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
->>>>>>> b4c3f1f502f4b882c43d369eb06eb18c0f0a1bd9
 /*END SCREEN AREA*/
 #gameover-screen {
   display: none;
