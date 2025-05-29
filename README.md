@@ -1,4 +1,4 @@
-# Paper Boat Turtle Rescue
+# Paper Boat Turtles Rescue
 
 - You control a paper boat floating down a river.
 - Your mission: rescue as many baby turtles as possible before the timer hits zero.
