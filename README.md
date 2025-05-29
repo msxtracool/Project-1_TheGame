@@ -10,19 +10,4 @@
 
 - Touch the turtles to rescue them.
 
-# Project Structure
 
-PROJECT-1_THEGAME/
-├── images/  
-│
-├── js/  
-│ ├── boatControl.js
-│ ├── saveTurtles.js
-│ ├── game.js
-│ └── script.js
-│
-├── css/  
-│ └── style.css
-│
-├── index.html
-├── README.md

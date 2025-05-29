@@ -7,10 +7,7 @@ class Turtles {
     this.top = Math.floor(Math.random() * (400 - 200 + 1) + 160);
     this.width = 90;
     this.height = 90;
-    this.imagesArray = [
-      "../images/babyTurtle.PNG",
-      "../images/babyTurtle02.PNG",
-    ];
+    this.imagesArray = ["./images/babyTurtle.PNG", "./images/babyTurtle02.PNG"];
     this.randomImageIndex = Math.floor(Math.random() * this.imagesArray.length);
     //create turtles image
     this.element = document.createElement("img");
