@@ -11,7 +11,7 @@ class BoatPlayer {
 
     //create an img for the player
     this.element = document.createElement("img");
-    this.element.src = "./images/boatpaper.PNG";
+    this.element.src = "./images/boatpaper.png";
     this.element.style.width = this.width + "px";
     this.element.style.height = this.height + "px";
     this.element.style.position = "absolute";
