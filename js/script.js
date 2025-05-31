@@ -24,19 +24,19 @@ restartButton.addEventListener("click", () => {
 window.addEventListener("keydown", (event) => {
   if (event.code === "ArrowRight") {
     console.log("right pressed");
-    ourGame.player.directionX = 3;
+    ourGame.player.directionX = 4;
   }
   if (event.code === "ArrowLeft") {
     console.log("left pressed");
-    ourGame.player.directionX = -3;
+    ourGame.player.directionX = -4;
   }
   if (event.code === "ArrowUp") {
     console.log("Up pressed");
-    ourGame.player.directionY = -3;
+    ourGame.player.directionY = -4;
   }
   if (event.code === "ArrowDown") {
     console.log("Down pressed");
-    ourGame.player.directionY = 3;
+    ourGame.player.directionY = 4;
   }
 });
 

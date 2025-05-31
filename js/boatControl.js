@@ -49,7 +49,7 @@ class BoatPlayer {
     this.element.style.top = this.top + "px";
   }
 
-  //collision
+  //collision to touch the turtles
   didCollide(obstacle) {
     const playerRect = this.element.getBoundingClientRect(); //calculate boat's rectangle.
     const obstacleRect = obstacle.element.getBoundingClientRect(); //calculate obstacle's rectangle.
